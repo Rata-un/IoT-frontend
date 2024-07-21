@@ -2,6 +2,7 @@ import Layout from "../components/layout";
 import cafeBackgroundImage from "../assets/images/bg-cafe-1.jpg";
 import ajPanwitImage from "../assets/images/aj-panwit.jpg";
 import coffeeImage from "../assets/images/coffee-1.jpg";
+import EnfantImage from "../assets/images/Enfantz.jpg";
 
 export default function HomePage() {
   return (
@@ -31,15 +32,16 @@ export default function HomePage() {
             <img src={ajPanwitImage} alt="Panwit Tuwanut" className="h-full w-full object-cover" />
           </div>
         </div>
-        <p className="text-right mt-8">
-          ปัจจุบันค่าเฟ่ และห้องสมุดของเรา อยู่ในช่วงการดูแลของ ....
-          {/* TODO: ชื่อของตนเอง, รหัสประจำตัวนักศึกษา และแนะนำคาเฟ่นี้ต่ออีกสักหน่อย + ใส่รูปของตนเอง (ไม่จำเป็นหากไม่สะดวกใจใส่รูป) */}
-          ซึ่งมีบริการ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          placeat sit ea sapiente officia sunt cumque impedit, reiciendis quis eius asperiores!
-          Minus, mollitia? Vitae inventore odio quod ducimus similique, expedita sequi, reiciendis
-          rem recusandae impedit voluptatibus quo veritatis ut quis et suscipit? Eligendi, neque!
-          Earum quaerat unde similique totam. Pariatur!
-        </p>
+        <div className="grid grid-cols-3 gap-4">
+          <div>
+            <img src={EnfantImage} alt="Rata Unnaha" className="h-full w-full object-cover" />
+          </div>
+          <p className="text-right mt-8  col-span-2">
+            ปัจจุบันค่าเฟ่ และห้องสมุดของเรา อยู่ในช่วงการดูแลของ
+            น.ส.รตา อุณหะ รหัสประจำตัวพนักงาน 65070195 ซึ่งมีบริการ
+            {/* TODO: ชื่อของตนเอง, รหัสประจำตัวนักศึกษา และแนะนำคาเฟ่นี้ต่ออีกสักหน่อย + ใส่รูปของตนเอง (ไม่จำเป็นหากไม่สะดวกใจใส่รูป) */}
+          </p>
+        </div>
       </section>
 
       <section className="w-full flex justify-center">

@@ -7,25 +7,25 @@ import { Alert, Button } from "@mantine/core";
 import { IconAlertTriangleFilled, IconPlus } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
-export default function BooksPage() {
+export default function BillPage() {
   const { data: books, error } = useSWR<Book[]>("/books");
 
   return (
     <>
       <Layout>
         <section
-          className="h-[500px] w-full text-white bg-orange-700 bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
+          className="h-[500px] w-full text-white bg-orange-800 bg-cover bg-blend-multiply flex flex-col justify-center items-center px-4 text-center"
           style={{
             backgroundImage: `url(${cafeBackgroundImage})`,
           }}
         >
-          <h1 className="text-5xl mb-2">หนังสือ</h1>
-          <h2>รายการหนังสือทั้งหมด</h2>
+          <h1 className="text-5xl mb-2">รายการคำสั่งซื้อ</h1>
+          <h2>รายการคำสั่งซื้อทั้งหมด</h2>
         </section>
 
         <section className="container mx-auto py-8">
-          <div className="flex justify-between mb-4">
-            <h1>รายการหนังสือ</h1>
+          <div className="flex justify-between">
+            <h1>รายการคำสั่งซื้อ</h1>
 
             <Button
               component={Link}
@@ -50,12 +50,12 @@ export default function BooksPage() {
             </Alert>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {books?.map((book) => (
               <div className="border border-solid border-neutral-200" key={book.id}>
                 <img
-                  src={book.image}
-                  alt="https://placehold.co/150x200"
+                  src="https://placehold.co/150x200"
+                  alt={book.title}
                   className="w-full object-cover aspect-[3/4]"
                 />
                 <div className="p-4">
@@ -70,7 +70,7 @@ export default function BooksPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </section>
       </Layout>
     </>

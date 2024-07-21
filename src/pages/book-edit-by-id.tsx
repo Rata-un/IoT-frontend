@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
 import { notifications } from "@mantine/notifications";
 import { modals } from "@mantine/modals";
+import { Textarea } from '@mantine/core';
+import { MultiSelect } from "@mantine/core";
 
 export default function BookEditById() {
   const { bookId } = useParams();
@@ -163,9 +165,43 @@ export default function BookEditById() {
                   {...bookEditForm.getInputProps("year")}
                 />
 
-                {/* TODO: เพิ่มรายละเอียดหนังสือ */}
-                {/* TODO: เพิ่มเรื่องย่อ */}
+                <Textarea
+                  label="รายละเอียดหนังสือ"
+                  placeholder="รายละเอียดหนังสือ"
+                  radius="md"
+                  maxRows={4}
+                  {...bookEditForm.getInputProps("detail")}
+                />
+
+                <Textarea
+                  label="เรื่องย่อ"
+                  placeholder="เรื่องย่อ"
+                  radius="md"
+                  {...bookEditForm.getInputProps("synopsis")}
+                />
                 {/* TODO: เพิ่มหมวดหมู่(s) */}
+                <TextInput
+                  label="หมวดหมู่หนังสือ"
+                  placeholder="หมวดหมู่หนังสือ"
+                  radius="md"
+                  {...bookEditForm.getInputProps("category")}
+                />
+
+
+                {/* ทำไงต่องะ */}
+                {/* <MultiSelect
+                  label="หมวดหมู่หนังสือ"
+                  placeholder="หมวดหมู่หนังสือ"
+                  radius="md"
+                  data={['มังงะ', 'นิยายแปล', 'จิตวิทยา', 'การพัฒนาตนเอง', 'วรรณกรรม', 'บ้านและสวน', 'สืบสวน']}
+                /> */}
+
+                <TextInput
+                  label="ลิงค์ภาพปกหนังสือ"
+                  placeholder="ลิงค์ภาพปกหนังสือ"
+                  radius="md"
+                  {...bookEditForm.getInputProps("image")}
+                 />
 
                 <Checkbox
                   label="เผยแพร่"

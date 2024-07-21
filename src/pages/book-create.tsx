@@ -6,6 +6,8 @@ import { useState } from "react";
 import axios, { AxiosError } from "axios";
 import { notifications } from "@mantine/notifications";
 import { Book } from "../lib/models";
+import { Textarea } from '@mantine/core';
+// import { MultiSelect } from "@mantine/core";
 
 export default function BookCreatePage() {
   const navigate = useNavigate();
@@ -18,12 +20,19 @@ export default function BookCreatePage() {
       author: "",
       year: 2024,
       is_published: false,
+      detail: "",
+      synopsis: "",
+      category: "",
+      image: ""
     },
 
     validate: {
       title: isNotEmpty("กรุณาระบุชื่อหนังสือ"),
       author: isNotEmpty("กรุณาระบุชื่อผู้แต่ง"),
       year: isNotEmpty("กรุณาระบุปีที่พิมพ์หนังสือ"),
+      detail: isNotEmpty("กรุณาระบุรายละเอียดหนังสือ"),
+      synopsis: isNotEmpty("กรุณาระบุเรื่องย่อ"),
+      category: isNotEmpty("กรุณาระบุประเภท"),
     },
   });
 
@@ -91,10 +100,40 @@ export default function BookCreatePage() {
               {...bookCreateForm.getInputProps("year")}
             />
 
-            {/* TODO: เพิ่มรายละเอียดหนังสือ */}
-            {/* TODO: เพิ่มเรื่องย่อ */}
-            {/* TODO: เพิ่มหมวดหมู่(s) */}
+            <Textarea
+              label="รายละเอียดหนังสือ"
+              placeholder="รายละเอียดหนังสือ"
+              maxRows={4}
+              {...bookCreateForm.getInputProps("detail")}
+            />
+            <Textarea
+              label="เรื่องย่อ"
+              placeholder="เรื่องย่อ"
+              maxRows={8}
+              {...bookCreateForm.getInputProps("synopsis")}
+            />
 
+            {/* TODO: เพิ่มหมวดหมู่(s) */}
+            {/* <MultiSelect
+                  label="หมวดหมู่หนังสือ"
+                  placeholder="หมวดหมู่หนังสือ"
+                  radius="md"
+                  data={['มังงะ', 'นิยายแปล', 'จิตวิทยา', 'การพัฒนาตนเอง', 'วรรณกรรม', 'บ้านและสวน', 'สืบสวน']}
+                /> */}
+            <TextInput
+              label="หมวดหมู่หนังสือ"
+              placeholder="หมวดหมู่หนังสือ"
+              radius="md"
+              {...bookCreateForm.getInputProps("category")}
+            />
+
+            <TextInput
+              label="ลิงค์ภาพปกหนังสือ"
+              placeholder="ลิงค์ภาพปกหนังสือ"
+              radius="md"
+              {...bookCreateForm.getInputProps("bookimage")}
+            />
+            
             <Checkbox
               label="เผยแพร่"
               {...bookCreateForm.getInputProps("is_published", {
