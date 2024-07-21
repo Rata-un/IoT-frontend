@@ -11,7 +11,7 @@ import axios, { AxiosError } from "axios";
 import { notifications } from "@mantine/notifications";
 import { modals } from "@mantine/modals";
 import { Textarea } from '@mantine/core';
-import { MultiSelect } from "@mantine/core";
+// import { MultiSelect } from "@mantine/core";
 
 export default function BookEditById() {
   const { bookId } = useParams();

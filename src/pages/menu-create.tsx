@@ -29,7 +29,7 @@ export default function MenuCreatePage() {
   const handleSubmit = async (values: typeof menuCreateForm.values) => {
     try {
       setIsProcessing(true);
-      const response = await axios.post<Menu>(`/menu`, values);
+      await axios.post<Menu>(`/menu`, values);
       notifications.show({
         title: "เพิ่มข้อมูลเมนูมสำเร็จ",
         message: "ข้อมูลเมนูได้รับการเพิ่มเรียบร้อยแล้ว",
