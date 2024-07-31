@@ -31,7 +31,7 @@ export default function OrderByIdPage() {
               <p className="text-xl mt-2">ใบเสร็จรับเงิน IOT Cafe</p>
               <p className="text-lg">วันเวลาออกใบเสร็จ {order.date && 
                 new Date(new Date(order.date).getTime() + 7 * 60 * 60 * 1000).toLocaleString()}</p>
-              <Divider className="mt-4" />
+              <Divider className="my-4" />
                 {order.order_items.map((item) => (
                   <div key={item.id} className="flex flex-row text-lg space-x-8 text-center">
                     <p className="flex-1">{item.menu.name}</p>
@@ -41,6 +41,7 @@ export default function OrderByIdPage() {
                 ))}
               <Divider className="mt-4" />
               <p className="text-xl mt-4">ราคารวมทั้งหมด {order.total_price} บาท</p>
+              <p className="text-start px-10 mt-4">หมายเหตุ : {order.description || '-'}</p>
             </>
           )}
         </Container>
