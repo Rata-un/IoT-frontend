@@ -81,7 +81,7 @@ export default function OrdersPage() {
           </Alert>
         )}
         {orders && (
-          <Table striped highlightOnHover withTableBorder withColumnBorders>
+          <Table withTableBorder withColumnBorders>
             <Table.Thead>{ths}</Table.Thead>
             <Table.Tbody>{rows}</Table.Tbody>
           </Table>
