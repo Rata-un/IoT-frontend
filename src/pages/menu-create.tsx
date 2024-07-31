@@ -73,19 +73,19 @@ export default function MenuCreatePage() {
           <form onSubmit={menuCreateForm.onSubmit(handleSubmit)} className="space-y-8">
             <TextInput
               label="ชื่อเมนู"
-              placeholder="ชื่อเมนู"
+              placeholder="ช็อกโก้บานาน่า"
               {...menuCreateForm.getInputProps("name")}
             />
 
             <NumberInput
               label="ราคา"
-              placeholder="ราคา"
+              placeholder="60"
               {...menuCreateForm.getInputProps("price")}
             />
 
             <TextInput
-              label="ลิงค์ภาพเครื่องดื่ม"
-              placeholder="ลิงค์ภาพเครื่องดื่ม"
+              label="URL ภาพเครื่องดื่ม"
+              placeholder="https://s359.kapook.com/rq/580/435/50/pagebuilder/d10d3774-d25d-478a-b479-a2314dcab48f.jpg"
               radius="md"
               {...menuCreateForm.getInputProps("menuImage")}
             />

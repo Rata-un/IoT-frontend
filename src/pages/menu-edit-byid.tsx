@@ -144,19 +144,19 @@ export default function MenuEditById() {
               <form onSubmit={menuEditForm.onSubmit(handleSubmit)} className="space-y-8">
               <TextInput
               label="ชื่อเมนู"
-              placeholder="ชื่อเมนู"
+              placeholder="นมกล้วยปั่น"
               {...menuEditForm.getInputProps("name")}
             />
 
             <NumberInput
               label="ราคา"
-              placeholder="ราคา"
+              placeholder="30"
               {...menuEditForm.getInputProps("price")}
             />
 
             <TextInput
-              label="ลิงค์ภาพเครื่องดื่ม"
-              placeholder="ลิงค์ภาพเครื่องดื่ม"
+              label="URL ภาพเครื่องดื่ม"
+              placeholder="https://s359.kapook.com/rq/580/435/50/pagebuilder/d10d3774-d25d-478a-b479-a2314dcab48f.jpg"
               radius="md"
               {...menuEditForm.getInputProps("menuImage")}
             />

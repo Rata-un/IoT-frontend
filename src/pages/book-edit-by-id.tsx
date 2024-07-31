@@ -177,7 +177,7 @@ export default function BookEditById() {
                   radius="md"
                   {...bookEditForm.getInputProps("synopsis")}
                 />
-                {/* TODO: เพิ่มหมวดหมู่(s) */}
+                
                 <TextInput
                   label="หมวดหมู่หนังสือ"
                   placeholder="มังงะ, สืบสวน, สยองขวัญ"
@@ -188,7 +188,7 @@ export default function BookEditById() {
 
                 <TextInput
                   label="URL ภาพปกหนังสือ"
-                  placeholder="ลิงค์ภาพปกหนังสือ"
+                  placeholder="https://ookbeeaudio.s3-ap-southeast-1.amazonaws.com/coverImage/7092/Teenager-in-Painful-new.jpg"
                   radius="md"
                   {...bookEditForm.getInputProps("image")}
                  />

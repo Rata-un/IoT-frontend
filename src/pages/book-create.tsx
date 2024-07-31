@@ -121,7 +121,7 @@ export default function BookCreatePage() {
 
             <TextInput
               label="URL ภาพปกหนังสือ"
-              placeholder="https://www.it.kmitl.ac.th/wp-content/uploads/2017/12/Panwit-300x300.jpg"
+              placeholder="https://ookbeeaudio.s3-ap-southeast-1.amazonaws.com/coverImage/7092/Teenager-in-Painful-new.jpg"
               radius="md"
               {...bookCreateForm.getInputProps("bookimage")}
             />
