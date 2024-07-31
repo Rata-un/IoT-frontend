@@ -11,6 +11,9 @@ export default function BookByIdPage() {
 
   const { data: book, isLoading, error } = useSWR<Book>(`/books/${bookId}`);
 
+  const getCategories = (categories: string) => 
+    categories.split(',').map(cat => cat.trim()).filter(cat => cat);
+
   return (
     <>
       <Layout>
@@ -49,10 +52,11 @@ export default function BookByIdPage() {
                   </p>
 
                   <h3>หมวดหมู่</h3>
-                  {/* TODO: เพิ่มหมวดหมู่(s) */}
-                  <div className="flex flex-wrap gap-2">
-                    <Badge color="teal">{book.category}</Badge>
-                  </div>
+                  {getCategories(book.category).map((cat, index) => (
+                      <Badge key={index} color="teal" className="mr-2">
+                        {cat}
+                      </Badge>
+                  ))}
                 </div>
               </div>
 

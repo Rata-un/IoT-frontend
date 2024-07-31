@@ -11,7 +11,6 @@ import axios, { AxiosError } from "axios";
 import { notifications } from "@mantine/notifications";
 import { modals } from "@mantine/modals";
 import { Textarea } from '@mantine/core';
-// import { MultiSelect } from "@mantine/core";
 
 export default function BookEditById() {
   const { bookId } = useParams();
@@ -129,8 +128,7 @@ export default function BookEditById() {
     <>
       <Layout>
         <Container className="mt-8">
-          <h1 className="text-xl">แก้ไขข้อมูลหนังสือ</h1>
-
+          <h1 className="text-xl text-center mb-2">แก้ไขข้อมูลหนังสือ</h1>
           {isLoading && !error && <Loading />}
           {error && (
             <Alert
@@ -182,22 +180,14 @@ export default function BookEditById() {
                 {/* TODO: เพิ่มหมวดหมู่(s) */}
                 <TextInput
                   label="หมวดหมู่หนังสือ"
-                  placeholder="หมวดหมู่หนังสือ"
+                  placeholder="มังงะ, สืบสวน, สยองขวัญ"
                   radius="md"
+                  description="ใช้ , เพื่อคั่นในแต่ละหมวดหมู่"
                   {...bookEditForm.getInputProps("category")}
                 />
 
-
-                {/* ทำไงต่องะ */}
-                {/* <MultiSelect
-                  label="หมวดหมู่หนังสือ"
-                  placeholder="หมวดหมู่หนังสือ"
-                  radius="md"
-                  data={['มังงะ', 'นิยายแปล', 'จิตวิทยา', 'การพัฒนาตนเอง', 'วรรณกรรม', 'บ้านและสวน', 'สืบสวน']}
-                /> */}
-
                 <TextInput
-                  label="ลิงค์ภาพปกหนังสือ"
+                  label="URL ภาพปกหนังสือ"
                   placeholder="ลิงค์ภาพปกหนังสือ"
                   radius="md"
                   {...bookEditForm.getInputProps("image")}

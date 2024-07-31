@@ -32,8 +32,19 @@ export default function MenuPage() {
             <Button
               component={Link}
               leftSection={<IconPlus />}
+              to="/orders/create"
+              size="s"
+              variant="primary"
+              className="flex items-center space-x-2"
+            >
+              สั่งเครื่องดื่ม
+            </Button>
+
+            <Button
+              component={Link}
+              leftSection={<IconPlus />}
               to="/menu/create"
-              size="xs"
+              size="s"
               variant="primary"
               className="flex items-center space-x-2"
             >
@@ -61,12 +72,12 @@ export default function MenuPage() {
                   className="w-full object-cover aspect-[3/4]"
                 />
                 <div className="p-4">
-                  <h2 className="text-xl font-semibold line-clamp-2">{menu.name}</h2>
-                  <p className="text-sm text-neutral-500">ราคา {menu.price} บาท</p>
+                  <h2 className="text-2xl font-semibold line-clamp-2">{menu.name}</h2>
+                  <p className="text-lg  text-neutral-500">ราคา {menu.price} บาท</p>
                 </div>
 
                 <div className="flex justify-end px-4 pb-2">
-                  <Button component={Link} to={`/menu/${menu.id}/edit`} size="xs" variant="default">
+                  <Button component={Link} to={`/menu/${menu.id}/edit`} size="md" variant="default">
                     แก้ไขข้อมูล
                   </Button>
                 </div>

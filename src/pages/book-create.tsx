@@ -7,7 +7,6 @@ import axios, { AxiosError } from "axios";
 import { notifications } from "@mantine/notifications";
 import { Book } from "../lib/models";
 import { Textarea } from '@mantine/core';
-// import { MultiSelect } from "@mantine/core";
 
 export default function BookCreatePage() {
   const navigate = useNavigate();
@@ -77,8 +76,7 @@ export default function BookCreatePage() {
     <>
       <Layout>
         <Container className="mt-8">
-          <h1 className="text-xl">เพิ่มหนังสือในระบบ</h1>
-
+          <h1 className="text-xl text-center mb-2">เพิ่มหนังสือในระบบ</h1>
           <form onSubmit={bookCreateForm.onSubmit(handleSubmit)} className="space-y-8">
             <TextInput
               label="ชื่อหนังสือ"
@@ -113,23 +111,17 @@ export default function BookCreatePage() {
               {...bookCreateForm.getInputProps("synopsis")}
             />
 
-            {/* TODO: เพิ่มหมวดหมู่(s) */}
-            {/* <MultiSelect
-                  label="หมวดหมู่หนังสือ"
-                  placeholder="หมวดหมู่หนังสือ"
-                  radius="md"
-                  data={['มังงะ', 'นิยายแปล', 'จิตวิทยา', 'การพัฒนาตนเอง', 'วรรณกรรม', 'บ้านและสวน', 'สืบสวน']}
-                /> */}
             <TextInput
               label="หมวดหมู่หนังสือ"
-              placeholder="หมวดหมู่หนังสือ"
+              placeholder="มังงะ, สืบสวน, สยองขวัญ"
               radius="md"
+              description="ใช้ , เพื่อคั่นในแต่ละหมวดหมู่"
               {...bookCreateForm.getInputProps("category")}
             />
 
             <TextInput
-              label="ลิงค์ภาพปกหนังสือ"
-              placeholder="ลิงค์ภาพปกหนังสือ"
+              label="URL ภาพปกหนังสือ"
+              placeholder="https://www.it.kmitl.ac.th/wp-content/uploads/2017/12/Panwit-300x300.jpg"
               radius="md"
               {...bookCreateForm.getInputProps("bookimage")}
             />
