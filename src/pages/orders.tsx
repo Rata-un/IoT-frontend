@@ -6,6 +6,7 @@ import { Alert, Table, Button } from "@mantine/core";
 import { IconAlertTriangleFilled } from "@tabler/icons-react";
 import { Order } from "../lib/models";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function OrdersPage() {
   const { data: orders, error } = useSWR<Order[]>("/orders");
@@ -30,13 +31,17 @@ export default function OrdersPage() {
           </>
         )}
         <Table.Td >{item.menu.name}</Table.Td>
+        <Table.Td>{item.menu.price}</Table.Td>
         <Table.Td className="text-center">{item.quantity}</Table.Td>
         {index === 0 && (
           <>
             <Table.Td rowSpan={order.order_items.length} className="text-center">{order.total_price}</Table.Td>
             <Table.Td rowSpan={order.order_items.length} >{order.description || '-'}</Table.Td>
             <Table.Td rowSpan={order.order_items.length} className="text-center">
-              <Button color="red" onClick={() => handleDelete(order.id)}>Delete</Button>
+              <div className="flex justify-center space-x-2">
+                <Button color="yellow" component={Link} to={`/orders/${order.id}`}>View</Button>
+                <Button color="red" onClick={() => handleDelete(order.id)}>Delete</Button>
+              </div>
             </Table.Td>
           </>
         )}
@@ -49,6 +54,7 @@ export default function OrdersPage() {
       <Table.Th className="content-center">เลขที่ใบเสร็จ</Table.Th>
       <Table.Th>วันเวลาที่ออกใบเสร็จ</Table.Th>
       <Table.Th>รายการที่สั่ง</Table.Th>
+      <Table.Th>ราคา</Table.Th>
       <Table.Th>จำนวน</Table.Th>
       <Table.Th>ราคาทั้งหมด</Table.Th>
       <Table.Th>หมายเหตุ</Table.Th>
