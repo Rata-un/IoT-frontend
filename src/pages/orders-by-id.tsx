@@ -36,7 +36,7 @@ export default function OrderByIdPage() {
                   <div key={item.id} className="flex flex-row text-lg space-x-8 text-center">
                     <p className="flex-1">{item.menu.name}</p>
                     <p className="flex-1">{item.quantity}</p>
-                    <p className="flex-1">{item.menu.price} บาท</p>
+                    <p className="flex-1">{item.menu.price * item.quantity} บาท</p>
                   </div>
                 ))}
               <Divider className="mt-4" />
