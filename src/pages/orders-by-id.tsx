@@ -29,7 +29,8 @@ export default function OrderByIdPage() {
             <>
               <h1 className="text-3xl">Order No. {order.id}</h1>
               <p className="text-xl mt-2">ใบเสร็จรับเงิน IOT Cafe</p>
-              <p className="text-lg">วันเวลาออกใบเสร็จ {order.date && new Date (order.date).toLocaleString()}</p>
+              <p className="text-lg">วันเวลาออกใบเสร็จ {order.date && 
+                new Date(new Date(order.date).getTime() + 7 * 60 * 60 * 1000).toLocaleString()}</p>
               <Divider className="mt-4" />
                 {order.order_items.map((item) => (
                   <div key={item.id} className="flex flex-row text-lg space-x-8 text-center">

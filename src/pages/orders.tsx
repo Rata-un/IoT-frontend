@@ -25,7 +25,8 @@ export default function OrdersPage() {
         {index === 0 && (
           <>
             <Table.Td rowSpan={order.order_items.length} className="text-center">{order.id}</Table.Td>
-            <Table.Td rowSpan={order.order_items.length} className="text-center">{order.date && new Date(order.date).toLocaleString()}</Table.Td>
+            <Table.Td rowSpan={order.order_items.length} className="text-center">{order.date && 
+            new Date(new Date(order.date).getTime() + 7 * 60 * 60 * 1000).toLocaleString()}</Table.Td>
           </>
         )}
         <Table.Td >{item.menu.name}</Table.Td>
@@ -46,7 +47,7 @@ export default function OrdersPage() {
   const ths = (
     <Table.Tr >
       <Table.Th className="content-center">เลขที่ใบเสร็จ</Table.Th>
-      <Table.Th>วันที่ออกใบเสร็จ</Table.Th>
+      <Table.Th>วันเวลาที่ออกใบเสร็จ</Table.Th>
       <Table.Th>รายการที่สั่ง</Table.Th>
       <Table.Th>จำนวน</Table.Th>
       <Table.Th>ราคาทั้งหมด</Table.Th>
